@@ -244,7 +244,7 @@
 
     <string name="tun_stack_mode">Stack Mode</string>
     <string name="tun_stack_system">System Stack</string>
-    <string name="tun_stack_gvisor">Gvisor Stack</string>
+    <string name="tun_stack_gvisor">GVisor Stack</string>
     <string name="tun_stack_mixed">Mixed Stack</string>
 
     <string name="allow_all_apps">Allow all apps</string>
@@ -314,10 +314,10 @@
     <string name="skip_domain">Skip Domain</string>
     <string name="skip_src_address">Skip Src Address</string>
     <string name="skip_dst_address">Skip Dst Address</string>
-    <string name="sniff_http_ports">Sniff HTTP Ports</string>
+    <string name="sniff_http_ports">Sniff Http Ports</string>
     <string name="sniff_tls_ports">Sniff TLS Ports</string>
     <string name="sniff_quic_ports">Sniff QUIC Ports</string>
-    <string name="sniff_http_override_destination">Sniff HTTP Override Destination</string>
+    <string name="sniff_http_override_destination">Sniff Http Override Destination</string>
     <string name="sniff_tls_override_destination">Sniff TLS Override Destination</string>
     <string name="sniff_quic_override_destination">Sniff QUIC Override Destination</string>
 
