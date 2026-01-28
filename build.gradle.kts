@@ -29,6 +29,9 @@ subprojects {
 
     val isApp = name == "app"
 
+    val targetAbis = (project.findProperty("ABI") as? String)?.split(",")
+        ?: listOf("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
+
     apply(plugin = if (isApp) "com.android.application" else "com.android.library")
 
     fun queryConfigProperty(key: String): Any? {
@@ -65,12 +68,12 @@ subprojects {
             resValue("integer", "release_code", "$versionCode")
 
             ndk {
-                abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
+                abiFilters += targetAbis
             }
 
             externalNativeBuild {
                 cmake {
-                    abiFilters("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
+                    abiFilters(*targetAbis.toTypedArray())
                 }
             }
 
@@ -186,9 +189,9 @@ subprojects {
             splits {
                 abi {
                     isEnable = true
-                    isUniversalApk = true
+                    isUniversalApk = targetAbis.size > 1
                     reset()
-                    include("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
+                    include(*targetAbis.toTypedArray())
                 }
             }
         }
