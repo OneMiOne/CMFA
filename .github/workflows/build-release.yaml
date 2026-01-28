@@ -66,11 +66,11 @@ jobs:
 
       - name: Release Build
         if: success()
-        run: ./gradlew --no-daemon app:assembleMetaRelease
+        run: ./gradlew --no-daemon app:assembleMetaRelease -PABI=arm64-v8a
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         if: success()
         with:
-          name: cmfa-meta-release
-          path: app/build/outputs/apk/meta/release/*.apk
+          name: cmfa-meta-release-arm64
+          path: app/build/outputs/apk/meta/release/*-arm64-v8a-release.apk
