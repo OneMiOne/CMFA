@@ -123,7 +123,7 @@ subprojects {
 
                 dimension = flavorDimensionList[0]
                 if (!removeSuffix) {
-                    versionNameSuffix = ".Meta"
+                    versionNameSuffix = ".Mihomo"
                 }
 
                 buildConfigField("boolean", "PREMIUM", "Boolean.parseBoolean(\"false\")")
