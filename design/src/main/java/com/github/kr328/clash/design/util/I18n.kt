@@ -81,7 +81,3 @@ fun Long.toDateStr(): String {
     val simpleDateFormat =SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     return simpleDateFormat.format(Date(this))
 }
-
-fun formatProfileName(name: String): String {
-    return name.substringBeforeLast('.')
-}
