@@ -132,7 +132,7 @@ subprojects {
                 resValue("string", "application_name", "@string/application_name_meta")
 
                 if (isApp && !removeSuffix) {
-                    applicationIdSuffix = ".meta"
+                    applicationIdSuffix = ".mihomo"
                 }
             }
         }
