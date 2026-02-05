@@ -49,6 +49,16 @@ class MainApplication : Application() {
             }
         }
 
+        val geoipDatFile = File(clashDir, "geoip.dat")
+        if (geoipDatFile.exists() && geoipDatFile.lastModified() < updateDate) {
+            geoipDatFile.delete()
+        }
+        if (!geoipDatFile.exists()) {
+            FileOutputStream(geoipDatFile).use {
+                assets.open("geoip.dat").copyTo(it)
+            }
+        }
+
         val geositeFile = File(clashDir, "geosite.dat")
         if (geositeFile.exists() && geositeFile.lastModified() < updateDate) {
             geositeFile.delete()
@@ -56,6 +66,16 @@ class MainApplication : Application() {
         if (!geositeFile.exists()) {
             FileOutputStream(geositeFile).use {
                 assets.open("geosite.dat").copyTo(it)
+            }
+        }
+
+        val countryFile = File(clashDir, "country.mmdb")
+        if (countryFile.exists() && countryFile.lastModified() < updateDate) {
+            countryFile.delete()
+        }
+        if (!countryFile.exists()) {
+            FileOutputStream(countryFile).use {
+                assets.open("country.mmdb").copyTo(it)
             }
         }
 
