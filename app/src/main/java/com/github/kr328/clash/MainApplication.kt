@@ -79,13 +79,13 @@ class MainApplication : Application() {
             }
         }
 
-        val asnFile = File(clashDir, "asn.mmdb")
+        val asnFile = File(clashDir, "ASN.mmdb")
         if (asnFile.exists() && asnFile.lastModified() < updateDate) {
             asnFile.delete()
         }
         if (!asnFile.exists()) {
             FileOutputStream(asnFile).use {
-                assets.open("asn.mmdb").copyTo(it)
+                assets.open("ASN.mmdb").copyTo(it)
             }
         }
     }
