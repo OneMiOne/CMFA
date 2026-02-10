@@ -251,7 +251,7 @@
     <string name="allow_selected_apps">Allow selected apps</string>
     <string name="deny_selected_apps">Deny selected apps</string>
 
-    <string name="no_profile_selected">No Profile Selected</string>
+    <string name="no_profile_selected">No profile selected</string>
 
     <string name="layout">Layout</string>
     <string name="single">Single</string>
